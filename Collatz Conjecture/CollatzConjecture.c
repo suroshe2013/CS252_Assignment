@@ -16,7 +16,6 @@ int main()
 		}while (k <= 0);
 
 		pid = fork();
-		printf("%d",pid);
 		if (pid == 0)
 		{
 			printf("Child is working...\n");

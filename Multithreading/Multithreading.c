@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<pthread.h>
-int arr[50], i, n;
 
+/*  Global Variables    */
+int arr[50], i, n;
+float average;
+int min, max;
 void *th()
 {
-	char *a;
 	float sum=0;
-	float average;
 	printf("Enter the size of list\n");
 	scanf("%d",&n);
 	printf("Enter the numbers\n");
@@ -24,47 +25,40 @@ void *th()
 }
 void *th1()
 {
-
-
-	int temp=arr[0];
+	min=arr[0];
 	for(int i=1;i<n;i++)
 		{
-			if(temp>arr[i])
+			if(min>arr[i])
 			{
-			temp=arr[i];
+			min=arr[i];
 			}
 		}
-	printf("\nThe Minimum  value is:=%d",temp);
+	printf("\nThe Minimum  value is:=%d",min);
 	return 0;
 }
 void *th2()
 {
-
-	int temp=arr[0];
+	int max=arr[0];
 	for(int i=1;i<n;i++)
 		{
-			if(temp<arr[i])
+			if(max<arr[i])
 			{
-			temp=arr[i];
+			max=arr[i];
 			}
 		}
-	printf("\nThe Maximum  value is:=%d",temp);
+	printf("\nThe Maximum  value is:=%d",max);
 	return 0;
 	}
 int main()
 {
-int n,i;
-pthread_t t1;
-pthread_t t2;
-pthread_t t3;
+	int n,i;
+	pthread_t t1;
+	pthread_t t2;
+	pthread_t t3;
 	n=pthread_create(&t1,NULL,&th,NULL);
-	pthread_join(t1,NULL);
-	//printf("\n done and my value is %d",n);
+		pthread_join(t1,NULL);
 	n=pthread_create(&t2,NULL,&th1,NULL);
-        pthread_join(t2,NULL);
-	//printf("\n done and my value is %d",n);
+		pthread_join(t2,NULL);
 	n=pthread_create(&t3,NULL,&th2,NULL);
-        pthread_join(t3,NULL);
-	//printf("\n done and my value is %d",n);
-
+		pthread_join(t3,NULL);
 }
