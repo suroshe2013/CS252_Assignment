@@ -5,9 +5,6 @@
 
 int main()
 {
-	printf("\n\nWelcome to Hailstone, by Sean Staz\n");
-
-	int n=0;
 	int k=0;
 	
 	pid_t pid;
@@ -19,7 +16,7 @@ int main()
 		}while (k <= 0);
 
 		pid = fork();
-
+		printf("%d",pid);
 		if (pid == 0)
 		{
 			printf("Child is working...\n");

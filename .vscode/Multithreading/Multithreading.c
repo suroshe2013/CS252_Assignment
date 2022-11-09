@@ -4,6 +4,7 @@ int arr[50], i, n;
 
 void *th()
 {
+	char *a;
 	float sum=0;
 	float average;
 	printf("Enter the size of list\n");
