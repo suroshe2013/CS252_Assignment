@@ -11,7 +11,7 @@ You will require Visual Studio Code and GNU Compiler Collection (GCC) in order t
 - The program can be run using Visual Studio Code.
 
 
-![ss4](https://raw.githubusercontent.com//Users/suroshe/Desktop/Screenshot 2022-11-09 at 12.20.55 PM.png)
+![ss4](https://raw.githubusercontent.com//Users/suroshe/Desktop/cc.png)
 
 
 ## Implementation
